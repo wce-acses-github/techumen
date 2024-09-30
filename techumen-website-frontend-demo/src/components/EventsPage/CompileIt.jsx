@@ -64,7 +64,7 @@ function CompileIt() {
       formData.append("transactionPhoto", data.transactionPhoto[0]); // Only the first file if multiple selected
   
       // Perform the POST request to the API
-      const response = await fetch("http://localhost:8000/api/v1/techumen/compileit", {
+      const response = await fetch("https://techumen.onrender.com/api/v1/techumen/compileit", {
         method: "POST",
         body: formData,
       });

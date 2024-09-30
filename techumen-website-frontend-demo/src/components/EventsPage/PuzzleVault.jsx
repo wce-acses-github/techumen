@@ -72,7 +72,7 @@ function PuzzleVault() {
   
       console.log(formData)
       // Perform the POST request to the API
-      const response = await fetch("http://localhost:8000/api/v1/techumen/puzzlevault", {
+      const response = await fetch("https://techumen.onrender.com/api/v1/techumen/puzzlevault", {
         method: "POST",
         body: formData,
       });

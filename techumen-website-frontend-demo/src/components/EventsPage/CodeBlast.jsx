@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import qrimage from "../../images/codeBlastqr.jpg";
+import qrimage from "../../images/codeblastqr.jpg";
 import codeBlastImage from "../../images/codeBlastImage.svg";
 import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
@@ -52,7 +52,7 @@ function CodeBlast() {
       formData.append("transactionPhoto", data.transactionPhoto[0]);
   
       // Perform the POST request to the API
-      const response = await fetch("http://localhost:8000/api/v1/techumen/codeblast", {
+      const response = await fetch("https://techumen.onrender.com/api/v1/techumen/codeblast", {
         method: "POST",
         body: formData,
       });

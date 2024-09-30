@@ -38,7 +38,7 @@ function Webnatic() {
       formData.append("transactionPhoto", data.transactionPhoto[0]);
 
       const response = await fetch(
-        "http://localhost:8000/api/v1/techumen/webnatic",
+        "https://techumen.onrender.com/api/v1/techumen/webnatic",
         {
           method: "POST",
           body: formData,
