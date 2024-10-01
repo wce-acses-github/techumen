@@ -2,11 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import qrimage from "../../images/puzzleVaultqr.jpg";
-import puzzlevaultImage from "../../images/puzzleVaultImage.svg";
+import puzzlevaultImage from "../../images/puzzlevaultImage.svg";
 import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
 import contactLogo from "../../images/contactLogo.svg";
 import moneyLogo from "../../images/moneyLogo.svg";
+import gobackBtn from "../../images/goBackBtn.svg";
+import rulebookLogo from "../../images/rulebook.svg";
 function PuzzleVault() {
   const {
     register,
@@ -31,8 +33,8 @@ function PuzzleVault() {
             return null;
         }
       };
-  
-     console.log(data);
+
+      console.log(data);
       // Create a FormData object to hold form data and files
       const formData = new FormData();
       formData.append("leaderName", data.leaderName);
@@ -40,57 +42,46 @@ function PuzzleVault() {
       formData.append("idCardPhoto", data.leaderIdCardPhoto[0]);
       formData.append("leaderEmail", data.email);
       formData.append("leaderContactNum", data.contactNum);
-  
+
       formData.append("teamName", data.teamName);
-  
+
       // Member information
-      formData.append("member1_Name", data.
-        member1_Name);
-      formData.append("member1_CollegeName", data.
-        member1_CollegeName);
-      formData.append("member1_ContactNum", data.
-        member1_ContactNum
-        );
-        formData.append("member2_Name", data.
-          member2_Name);
-        formData.append("member2_CollegeName", data.
-          member2_CollegeName);
-        formData.append("member2_ContactNum", data.
-          member2_ContactNum
-          );
-          formData.append("member3_Name", data.
-            member3_Name);
-          formData.append("member3_CollegeName", data.
-            member3_CollegeName);
-          formData.append("member3_ContactNum", data.
-            member3_ContactNum
-            );
-  
+      formData.append("member1_Name", data.member1_Name);
+      formData.append("member1_CollegeName", data.member1_CollegeName);
+      formData.append("member1_ContactNum", data.member1_ContactNum);
+      formData.append("member2_Name", data.member2_Name);
+      formData.append("member2_CollegeName", data.member2_CollegeName);
+      formData.append("member2_ContactNum", data.member2_ContactNum);
+      formData.append("member3_Name", data.member3_Name);
+      formData.append("member3_CollegeName", data.member3_CollegeName);
+      formData.append("member3_ContactNum", data.member3_ContactNum);
+
       // Transaction fields
       formData.append("transactionId", data.transactionId);
       formData.append("transactionPhoto", data.transactionPhoto[0]); // Only the first file if multiple selected
-  
-      console.log(formData)
+
+      console.log(formData);
       // Perform the POST request to the API
-      const response = await fetch("https://techumen.onrender.com/api/v1/techumen/puzzlevault", {
-        method: "POST",
-        body: formData,
-      });
-  
+      const response = await fetch(
+        "https://techumen.onrender.com/api/v1/techumen/puzzlevault",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
+
       const responseData = await response.json();
       console.log("Registration successful:", responseData);
       alert("Registration successful!");
-  
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(error.message || "An error occurred. Please try again.");
     }
   };
-  
 
   const navigate = useNavigate();
 
@@ -103,21 +94,7 @@ function PuzzleVault() {
         onClick={() => navigate("/")}
       >
         <div className="bg-blue-500 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 1024"
-            height="25px"
-            width="25px"
-          >
-            <path
-              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-              fill="#000000"
-            ></path>
-            <path
-              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-              fill="#000000"
-            ></path>
-          </svg>
+          <img src={gobackBtn} alt="goBack" />
         </div>
         <p className="translate-x-2 tajawal-font">Go Back</p>
       </button>
@@ -127,15 +104,15 @@ function PuzzleVault() {
         Puzzle Vault
       </h1>
       <p className="rowdy-font text-center text-lg mb-6 text-gray-700">
-        Crack the Puzzle, Uncover the Mysteryt
+        Crack the Puzzle, Uncover the Mystery
       </p>
 
       {/* event info */}
-      <div className="event-page-intro grid grid-cols-2 mb-2">
+      <div className="event-page-intro grid grid-rows-2 mb-2 sm:grid-cols-2 sm:grid-rows-1">
         <div className="event-page-intro-left flex justify-center items-center">
           <img
             src={puzzlevaultImage}
-            alt="puzzlevault-logo"
+            alt="webnatic-logo"
             className="w-[250px] h-[250px] rounded-full object-cover"
           />
         </div>
@@ -147,21 +124,16 @@ function PuzzleVault() {
             ultimate prize. Do you have what it takes to crack the vault?
           </p>
         </div>
-        <div className="col-span-2 flex justify-center">
-          <h2 className="text-lg font-semibold text-black mt-4 playwrite-de-grund-font">
-            Only the strongest teams will crack the code and rule the hunt!
-          </h2>
-        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 p-4 acme-font">
+      <div className="grid grid-cols-1 gap-4 p-4 acme-font sm:grid-cols-2 sm:grid-rows-1">
         {/* Card for Date of Event */}
         <div className="relative rounded-lg bg-slate-900 p-4">
           <div className="flex items-center mb-2">
             <img src={calenderLogo} alt="Calendar" className="w-6 h-6 mr-2" />
             <h3 className="text-xl font-bold text-white">Date of Event</h3>
           </div>
-          <p className="text-gray-300">12th October, 2024</p>
+          <p className="text-gray-300">13th October, 2024</p>
         </div>
 
         {/* Card for Timing of Event */}
@@ -190,56 +162,24 @@ function PuzzleVault() {
               Contact for any Query
             </h3>
           </div>
-          <p className="text-gray-300">Afnan Sayyad</p>
-          <p className="text-gray-300">Yash Savalkar</p>
+          <p className="text-gray-300">Afnan Sayyad : +918459039945</p>
+          <p className="text-gray-300">Yash Savalkar : +917972404363 </p>
         </div>
       </div>
 
       {/* RULEBOOK Section */}
-      <div className="mb-6 flex justify-center items-center gap-4">
-        <h2 className="text-l font-semibold text-black playwrite-de-grund-font">
+      <div className="mb-6 mt-4 flex flex-col items-center gap-4 md:flex-row">
+        {" "}
+        {/* Change to flex-col for mobile and flex-row for md */}
+        <h2 className="text-l font-semibold text-black playwrite-de-grund-font text-center">
           Discover all the essential information for the event right here
         </h2>
         <button
-          className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-r from-[#514ce2] to-[#2575fc] active:scale-95"
+          className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc] active:scale-95"
           type="button"
         >
           <span className="w-full h-full flex items-center gap-2 px-8 py-3 text-white rounded-[14px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              color="#ffffff"
-              fill="none"
-            >
-              <path
-                d="M22 14V10C22 6.22876 22 4.34315 20.8284 3.17157C19.6569 2 17.7712 2 14 2H12C8.22876 2 6.34315 2 5.17157 3.17157C4 4.34315 4 6.22876 4 10V14C4 17.7712 4 19.6569 5.17157 20.8284C6.34315 22 8.22876 22 12 22H14C17.7712 22 19.6569 22 20.8284 20.8284C22 19.6569 22 17.7712 22 14Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M5 6L2 6M5 12H2M5 18H2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M17.5 7L13.5 7M15.5 11H13.5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 22L9 2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img src={rulebookLogo} alt="rulebookLogo" />
             RULEBOOK
           </span>
         </button>
@@ -299,7 +239,9 @@ function PuzzleVault() {
             </div>
 
             {/* ID Card Photo */}
-            <div className="flex-1">
+            <div className="flex-1 mt-4">
+              {" "}
+              {/* Increased margin top for mobile spacing */}
               <label
                 htmlFor="idCardPhoto"
                 className="block text-gray-700 text-md font-bold mb-2"
@@ -408,8 +350,11 @@ function PuzzleVault() {
               {errors.member1_Name && <p>{errors.member1_Name.message}</p>}
             </div>
 
-            <div className="flex space-x-4">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row md:space-x-4">
+              {/* Member 1 College Name */}
+              <div className="flex-1 mb-4 md:mb-0">
+                {" "}
+                {/* Added bottom margin for mobile spacing */}
                 <label
                   htmlFor="member1_CollegeName"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -429,7 +374,10 @@ function PuzzleVault() {
                 )}
               </div>
 
-              <div className="w-1/2">
+              {/* Member 1 Contact Number */}
+              <div className="flex-1 mb-4 md:mb-0">
+                {" "}
+                {/* Added bottom margin for mobile spacing */}
                 <label
                   htmlFor="member1_ContactNum"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -469,8 +417,11 @@ function PuzzleVault() {
               {errors.member2_Name && <p>{errors.member2_Name.message}</p>}
             </div>
 
-            <div className="flex space-x-4">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row md:space-x-4">
+              {/* Member 2 College Name */}
+              <div className="flex-1 mb-4 md:mb-0">
+                {" "}
+                {/* Added bottom margin for mobile spacing */}
                 <label
                   htmlFor="member2_CollegeName"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -486,11 +437,16 @@ function PuzzleVault() {
                   })}
                 />
                 {errors.member2_CollegeName && (
-                  <p>{errors.member2_CollegeName.message}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.member2_CollegeName.message}
+                  </p>
                 )}
               </div>
 
-              <div className="w-1/2">
+              {/* Member 2 Contact Number */}
+              <div className="flex-1 mb-4 md:mb-0">
+                {" "}
+                {/* Added bottom margin for mobile spacing */}
                 <label
                   htmlFor="member2_ContactNum"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -506,7 +462,9 @@ function PuzzleVault() {
                   })}
                 />
                 {errors.member2_ContactNum && (
-                  <p>{errors.member2_ContactNum.message}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.member2_ContactNum.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -530,8 +488,11 @@ function PuzzleVault() {
               {errors.member3_Name && <p>{errors.member3_Name.message}</p>}
             </div>
 
-            <div className="flex space-x-4">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row md:space-x-4">
+              {/* Member 3 College Name */}
+              <div className="flex-1 mb-4 md:mb-0">
+                {" "}
+                {/* Added bottom margin for mobile spacing */}
                 <label
                   htmlFor="member3_CollegeName"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -547,11 +508,16 @@ function PuzzleVault() {
                   })}
                 />
                 {errors.member3_CollegeName && (
-                  <p>{errors.member3_CollegeName.message}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.member3_CollegeName.message}
+                  </p>
                 )}
               </div>
 
-              <div className="w-1/2">
+              {/* Member 3 Contact Number */}
+              <div className="flex-1 mb-4 md:mb-0">
+                {" "}
+                {/* Added bottom margin for mobile spacing */}
                 <label
                   htmlFor="member3_ContactNum"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -567,7 +533,9 @@ function PuzzleVault() {
                   })}
                 />
                 {errors.member3_ContactNum && (
-                  <p>{errors.member3_ContactNum.message}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.member3_ContactNum.message}
+                  </p>
                 )}
               </div>
             </div>

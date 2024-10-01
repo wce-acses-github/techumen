@@ -7,6 +7,8 @@ import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
 import contactLogo from "../../images/contactLogo.svg";
 import moneyLogo from "../../images/moneyLogo.svg";
+import rulebookLogo from "../../images/rulebook.svg";
+import gobackBtn from "../../images/goBackBtn.svg";
 
 function CompileIt() {
   const {
@@ -32,8 +34,8 @@ function CompileIt() {
             return null;
         }
       };
-  
-     console.log(data);
+
+      console.log(data);
       // Create a FormData object to hold form data and files
       const formData = new FormData();
       formData.append("leaderName", data.leaderName);
@@ -41,49 +43,48 @@ function CompileIt() {
       formData.append("idCardPhoto", data.leaderIdCardPhoto[0]);
       formData.append("leaderEmail", data.email);
       formData.append("leaderContactNum", data.contactNum);
-      formData.append("leaderHackerrankId", data.leaderHackrrankId
-      );
-  
+      formData.append("leaderHackerrankId", data.leaderHackrrankId);
+
       formData.append("teamName", data.teamName);
-  
+
       // Member information
-      formData.append("memberName", data.
-        member1_Name);
-      formData.append("memberCollegeName", data.
-        member1_CollegeName);
+      formData.append("memberName", data.member1_Name);
+      formData.append("memberCollegeName", data.member1_CollegeName);
       formData.append("memberEmail", data.memberEmail);
-      formData.append("memberContactNum", data.
-        member1_ContactNum
-        );
-  
+      formData.append("memberContactNum", data.member1_ContactNum);
+
       // Other fields
-      formData.append("laptopAvailable", data.laptopAvailable ? "true" : "false");
-  
+      formData.append(
+        "laptopAvailable",
+        data.laptopAvailable ? "true" : "false"
+      );
+
       // Transaction fields
       formData.append("transactionId", data.transactionId);
       formData.append("transactionPhoto", data.transactionPhoto[0]); // Only the first file if multiple selected
-  
+
       // Perform the POST request to the API
-      const response = await fetch("https://techumen.onrender.com/api/v1/techumen/compileit", {
-        method: "POST",
-        body: formData,
-      });
-  
+      const response = await fetch(
+        "https://techumen.onrender.com/api/v1/techumen/compileit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
+
       const responseData = await response.json();
       console.log("Registration successful:", responseData);
       alert("Registration successful!");
-  
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(error.message || "An error occurred. Please try again.");
     }
   };
-  
-  
+
   const navigate = useNavigate();
 
   return (
@@ -95,65 +96,47 @@ function CompileIt() {
         onClick={() => navigate("/")}
       >
         <div className="bg-blue-500 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 1024"
-            height="25px"
-            width="25px"
-          >
-            <path
-              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-              fill="#000000"
-            ></path>
-            <path
-              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-              fill="#000000"
-            ></path>
-          </svg>
+          <img src={gobackBtn} alt="goBack" />
         </div>
         <p className="translate-x-2 tajawal-font">Go Back</p>
       </button>
 
       {/* Title */}
       <h1 className="rowdy-font text-3xl font-bold text-center mb-2 text-black">
-        Puzzle Vault
+        Compile It
       </h1>
       <p className="rowdy-font text-center text-lg mb-6 text-gray-700">
-        Crack the Puzzle, Uncover the Mysteryt
+        Two Brains, One Breakthrough
       </p>
 
-      {/* event info */}
-      <div className="event-page-intro grid grid-cols-2 mb-2">
+      {/* Event Info */}
+      <div className="event-page-intro grid grid-rows-2 mb-2 sm:grid-cols-2 sm:grid-rows-1">
         <div className="event-page-intro-left flex justify-center items-center">
           <img
             src={compileItImage}
-            alt="puzzlevault-logo"
+            alt="webnatic-logo"
             className="w-[250px] h-[250px] rounded-full object-cover"
           />
         </div>
         <div className="event-page-intro-right flex flex-col justify-center text-gray-700">
           <p className="text-lg tajawal-font">
-            <span> Dive into the event everyone’s talking about!</span>{" "}
-            <br></br> A thrilling mystery-solving challenge where you’ll face
-            intricate puzzles and riddles, racing against time to unlock the
-            ultimate prize. Do you have what it takes to crack the vault?
+            In this duo-based event, teams analyze, debug, and solve coding
+            challenges together. It’s a test of teamwork and technical skills,
+            where speed and synergy lead to success. Participants collaborate
+            under pressure, sharpening problem-solving skills while enjoying a
+            competitive, fast-paced experience.
           </p>
-        </div>
-        <div className="col-span-2 flex justify-center">
-          <h2 className="text-lg font-semibold text-black mt-4 playwrite-de-grund-font">
-            Only the strongest teams will crack the code and rule the hunt!
-          </h2>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 p-4 acme-font">
+      <div className="grid grid-cols-1 gap-4 p-4 acme-font sm:grid-cols-2 sm:grid-rows-1">
         {/* Card for Date of Event */}
         <div className="relative rounded-lg bg-slate-900 p-4">
           <div className="flex items-center mb-2">
             <img src={calenderLogo} alt="Calendar" className="w-6 h-6 mr-2" />
             <h3 className="text-xl font-bold text-white">Date of Event</h3>
           </div>
-          <p className="text-gray-300">12th October, 2024</p>
+          <p className="text-gray-300">13th October, 2024</p>
         </div>
 
         {/* Card for Timing of Event */}
@@ -162,7 +145,7 @@ function CompileIt() {
             <img src={clockLogo} alt="Clock" className="w-6 h-6 mr-2" />
             <h3 className="text-xl font-bold text-white">Timing of Event</h3>
           </div>
-          <p className="text-gray-300">11AM - 5PM</p>
+          <p className="text-gray-300">9AM - 11AM</p>
         </div>
 
         {/* Card for Entry Fee */}
@@ -171,7 +154,7 @@ function CompileIt() {
             <img src={moneyLogo} alt="Money" className="w-6 h-6 mr-2" />
             <h3 className="text-xl font-bold text-white">Entry Fee</h3>
           </div>
-          <p className="text-gray-300">₹299 (With Refreshment)</p>
+          <p className="text-gray-300">₹149 (With Refreshments)</p>
         </div>
 
         {/* Card for Contact Information */}
@@ -182,56 +165,24 @@ function CompileIt() {
               Contact for any Query
             </h3>
           </div>
-          <p className="text-gray-300">Afnan Sayyad</p>
-          <p className="text-gray-300">Yash Savalkar</p>
+          <p className="text-gray-300">Avadhut Mali : +919579047160</p>
+          <p className="text-gray-300">Saurabh Doiphode : +917276495980</p>
         </div>
       </div>
 
       {/* RULEBOOK Section */}
-      <div className="mb-6 flex justify-center items-center gap-4">
-        <h2 className="text-l font-semibold text-black playwrite-de-grund-font">
+      <div className="mb-6 mt-4 flex flex-col items-center gap-4 md:flex-row">
+        {" "}
+        {/* Change to flex-col for mobile and flex-row for md */}
+        <h2 className="text-l font-semibold text-black playwrite-de-grund-font text-center">
           Discover all the essential information for the event right here
         </h2>
         <button
-          className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-r from-[#514ce2] to-[#2575fc] active:scale-95"
+          className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc] active:scale-95"
           type="button"
         >
           <span className="w-full h-full flex items-center gap-2 px-8 py-3 text-white rounded-[14px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              color="#ffffff"
-              fill="none"
-            >
-              <path
-                d="M22 14V10C22 6.22876 22 4.34315 20.8284 3.17157C19.6569 2 17.7712 2 14 2H12C8.22876 2 6.34315 2 5.17157 3.17157C4 4.34315 4 6.22876 4 10V14C4 17.7712 4 19.6569 5.17157 20.8284C6.34315 22 8.22876 22 12 22H14C17.7712 22 19.6569 22 20.8284 20.8284C22 19.6569 22 17.7712 22 14Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M5 6L2 6M5 12H2M5 18H2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M17.5 7L13.5 7M15.5 11H13.5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 22L9 2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img src={rulebookLogo} alt="rulebookLogo" />
             RULEBOOK
           </span>
         </button>
@@ -241,7 +192,10 @@ function CompileIt() {
         <h2 className="text-xl font-semibold text-center mb-4 text-black acme-font">
           Register for PuzzleVault
         </h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 fredoka-font">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-4 fredoka-font"
+        >
           {/* Leader Name */}
           <div>
             <label
@@ -264,7 +218,9 @@ function CompileIt() {
           {/* College Name and ID Card Photo */}
           <div className="flex flex-col md:flex-row md:space-x-4">
             {/* College Name */}
-            <div className="flex-1">
+            <div className="flex-1 mb-4 md:mb-0">
+              {" "}
+              {/* Added mb-4 for spacing on mobile */}
               <label
                 htmlFor="collegeName"
                 className="block text-gray-700 text-md font-bold mb-2"
@@ -337,7 +293,9 @@ function CompileIt() {
               </div>
 
               {/* Contact Number */}
-              <div className="flex-1">
+              <div className="flex-1 mt-4 md:mt-0">
+                {" "}
+                {/* Added margin top for mobile spacing only */}
                 <label
                   htmlFor="contactNum"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -362,7 +320,6 @@ function CompileIt() {
             </div>
 
             {/* Team Name */}
-
             <div>
               <label
                 htmlFor="teamName"
@@ -376,8 +333,13 @@ function CompileIt() {
                 placeholder="Enter your Team Name"
                 {...register("teamName", { required: "Team Name is required" })}
               />
-              {errors.teamName && <p>{errors.teamName.message}</p>}
+              {errors.teamName && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.teamName.message}
+                </p>
+              )}
             </div>
+
             {/* Member 1 */}
             <div>
               <label
@@ -394,11 +356,17 @@ function CompileIt() {
                   required: "Member 1 Name is required",
                 })}
               />
-              {errors.member1_Name && <p>{errors.member1_Name.message}</p>}
+              {errors.member1_Name && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.member1_Name.message}
+                </p>
+              )}
             </div>
 
-            <div className="flex space-x-4">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row md:space-x-4">
+              <div className="flex-1 mt-2 md:mt-0">
+                {" "}
+                {/* Decreased margin top for mobile spacing only */}
                 <label
                   htmlFor="member1_CollegeName"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -414,11 +382,15 @@ function CompileIt() {
                   })}
                 />
                 {errors.member1_CollegeName && (
-                  <p>{errors.member1_CollegeName.message}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.member1_CollegeName.message}
+                  </p>
                 )}
               </div>
 
-              <div className="w-1/2">
+              <div className="flex-1 mt-4 md:mt-0">
+                {" "}
+                {/* Keep margin top for contact number as is */}
                 <label
                   htmlFor="member1_ContactNum"
                   className="block text-gray-700 text-md font-bold mb-2"
@@ -434,7 +406,9 @@ function CompileIt() {
                   })}
                 />
                 {errors.member1_ContactNum && (
-                  <p>{errors.member1_ContactNum.message}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.member1_ContactNum.message}
+                  </p>
                 )}
               </div>
             </div>

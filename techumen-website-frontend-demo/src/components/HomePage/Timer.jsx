@@ -34,18 +34,27 @@ const Timer = () => {
 
   Object.keys(timeLeft).forEach((interval) => {
     timerComponents.push(
-      <div key={interval} className="flex flex-col items-center h-28 w-28 bg-gradient-to-tr from-slate-500 to-slate-100 p-6 rounded-full mx-2">
-        <span className="text-5xl font-extrabold font-sans text-neutral-900 acme-font">
+      <div
+        key={interval}
+        className="flex flex-col items-center h-24 w-24 md:h-32 md:w-32 bg-gradient-to-tr from-slate-500 to-slate-100 p-4 md:p-6 rounded-full mx-2 mb-5"
+      >
+        <span className="text-5xl md:text-6xl font-extrabold font-sans text-black acme-font">
           {timeLeft[interval].toString().padStart(2, "0")}
         </span>
-        <span className="text-neutral-800 font-bold capitalize tracking-tight acme-font">{interval}</span>
+        <span className="text-black font-bold capitalize text-lg md:text-xl tracking-tight acme-font">
+          {interval}
+        </span>
       </div>
     );
   });
 
   return (
-    <div className="flex justify-center items-center py-10">
-      {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+    <div className="flex flex-wrap justify-center items-center py-10">
+      {timerComponents.length ? (
+        timerComponents
+      ) : (
+        <span className="text-xl">Time's up!</span>
+      )}
     </div>
   );
 };

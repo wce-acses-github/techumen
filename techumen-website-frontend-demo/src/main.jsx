@@ -9,7 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
-import './index.css'
+import "./index.css";
 import HomePage from "./components/HomePage/HomePage.jsx";
 import Webnatic from "./components/EventsPage/Webnatic";
 import CodeBlast from "./components/EventsPage/CodeBlast";
@@ -32,7 +32,7 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-    <ShootingStars/>
-    <StarsBackground/>
+    <ShootingStars />
+    <StarsBackground />
   </StrictMode>
 );

@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import qrimage from "../../images/codeblastqr.jpg";
+import qrimage from "../../images/codeBlastqr.jpg";
 import codeBlastImage from "../../images/codeBlastImage.svg";
 import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
 import contactLogo from "../../images/contactLogo.svg";
 import moneyLogo from "../../images/moneyLogo.svg";
+import gobackBtn from "../../images/goBackBtn.svg";
+import rulebookLogo from "../../images/rulebook.svg";
 
 function CodeBlast() {
   const {
@@ -32,9 +34,9 @@ function CodeBlast() {
             return null;
         }
       };
-  
+
       const yearOfStudy = getYearOfStudy(data.yearOfStudy);
-  
+
       // Create a FormData object to hold form data and files
       const formData = new FormData();
       formData.append("name", data.name);
@@ -45,32 +47,34 @@ function CodeBlast() {
       formData.append("laptopAvailable", data.laptopAvailable ? "yes" : "no");
       console.log(data);
       formData.append("hackerrankId", data.hackerrankId); // Correct hackerrank field
-  
+
       // Append files
       formData.append("idCardPhoto", data.idCardPhoto[0]); // Only the first file if multiple selected
       formData.append("transactionId", data.transactionId);
       formData.append("transactionPhoto", data.transactionPhoto[0]);
-  
+
       // Perform the POST request to the API
-      const response = await fetch("https://techumen.onrender.com/api/v1/techumen/codeblast", {
-        method: "POST",
-        body: formData,
-      });
-  
+      const response = await fetch(
+        "https://techumen.onrender.com/api/v1/techumen/codeblast",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
+
       const responseData = await response.json();
       console.log("Registration successful:", responseData);
       alert("Registration successful!");
-  
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(error.message || "An error occurred. Please try again.");
     }
   };
-  
+
   const navigate = useNavigate();
 
   return (
@@ -82,21 +86,7 @@ function CodeBlast() {
         onClick={() => navigate("/")}
       >
         <div className="bg-blue-500 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 1024"
-            height="25px"
-            width="25px"
-          >
-            <path
-              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-              fill="#000000"
-            ></path>
-            <path
-              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-              fill="#000000"
-            ></path>
-          </svg>
+          <img src={gobackBtn} alt="goBack" />
         </div>
         <p className="translate-x-2 tajawal-font">Go Back</p>
       </button>
@@ -110,7 +100,7 @@ function CodeBlast() {
       </p>
 
       {/* Event Info */}
-      <div className="event-page-intro grid grid-cols-2 mb-2">
+      <div className="event-page-intro grid grid-rows-2 mb-2 sm:grid-cols-2 sm:grid-rows-1">
         <div className="event-page-intro-left flex justify-center items-center">
           <img
             src={codeBlastImage}
@@ -125,15 +115,9 @@ function CodeBlast() {
             top spot in this high-speed coding showdown.
           </p>
         </div>
-
-        <div className="col-span-2 flex justify-center">
-          <h2 className="text-lg font-semibold text-black mt-4 playwrite-de-grund-font">
-            Code. Compete. Conquer. The contest is ON – are you?
-          </h2>
-        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 p-4 acme-font">
+      <div className="grid grid-cols-1 gap-4 p-4 acme-font sm:grid-cols-2 sm:grid-rows-1">
         {/* Card for Date of Event */}
         <div className="relative rounded-lg bg-slate-900 p-4">
           <div className="flex items-center mb-2">
@@ -169,14 +153,15 @@ function CodeBlast() {
               Contact for any Query
             </h3>
           </div>
-          <p className="text-gray-300">Saurabh Doiphode</p>
-          <p className="text-gray-300">Avadhut Mali</p>
+          <p className="text-gray-300">Avadhut Mali : +919579047160</p>
+          <p className="text-gray-300">Saurabh Doiphode : +917276495980</p>
         </div>
       </div>
 
-      {/* RULEBOOK Section */}
-      <div className="mb-6 flex justify-center items-center gap-4">
-        <h2 className="text-l font-semibold text-black playwrite-de-grund-font">
+      <div className="mb-6 mt-4 flex flex-col items-center gap-4 md:flex-row">
+        {" "}
+        {/* Change to flex-col for mobile and flex-row for md */}
+        <h2 className="text-l font-semibold text-black playwrite-de-grund-font text-center">
           Discover all the essential information for the event right here
         </h2>
         <button
@@ -184,41 +169,7 @@ function CodeBlast() {
           type="button"
         >
           <span className="w-full h-full flex items-center gap-2 px-8 py-3 text-white rounded-[14px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              color="#ffffff"
-              fill="none"
-            >
-              <path
-                d="M22 14V10C22 6.22876 22 4.34315 20.8284 3.17157C19.6569 2 17.7712 2 14 2H12C8.22876 2 6.34315 2 5.17157 3.17157C4 4.34315 4 6.22876 4 10V14C4 17.7712 4 19.6569 5.17157 20.8284C6.34315 22 8.22876 22 12 22H14C17.7712 22 19.6569 22 20.8284 20.8284C22 19.6569 22 17.7712 22 14Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M5 6L2 6M5 12H2M5 18H2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M17.5 7L13.5 7M15.5 11H13.5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 22L9 2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img src={rulebookLogo} alt="rulebookLogo" />
             RULEBOOK
           </span>
         </button>
@@ -253,56 +204,6 @@ function CodeBlast() {
             )}
           </div>
 
-          {/* College Name and ID Card Photo */}
-          <div className="flex flex-col md:flex-row md:space-x-4">
-            {/* College Name */}
-            <div className="flex-1">
-              <label
-                htmlFor="collegeName"
-                className="block text-gray-700 text-md font-bold mb-2"
-              >
-                College Name:
-              </label>
-              <input
-                id="collegeName"
-                className="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                type="text"
-                placeholder="Enter your college name"
-                {...register("collegeName", {
-                  required: "College Name is required",
-                })}
-              />
-              {errors.collegeName && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.collegeName.message}
-                </p>
-              )}
-            </div>
-
-            {/* ID Card Photo */}
-            <div className="flex-1">
-              <label
-                htmlFor="idCardPhoto"
-                className="block text-gray-700 text-md font-bold mb-2"
-              >
-                Upload ID Card Photo:
-              </label>
-              <input
-                id="idCardPhoto"
-                type="file"
-                {...register("idCardPhoto", {
-                  required: "ID Card Photo is required",
-                })}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-              />
-              {errors.idCardPhoto && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.idCardPhoto.message}
-                </p>
-              )}
-            </div>
-          </div>
-
           {/* Year of Study and Laptop Available */}
           <div className="flex flex-col md:flex-row md:space-x-4">
             {/* Year of Study */}
@@ -313,8 +214,10 @@ function CodeBlast() {
               >
                 Year of Study:
               </label>
-              <div className="flex space-x-4">
-                {["1st", "2nd", "3rd", "4th"].map((year) => (
+              <div className="flex space-x-4 mb-4">
+                {" "}
+                {/* Add margin-bottom for spacing */}
+                {["1st", "2nd", "3rd"].map((year) => (
                   <label key={year} className="flex items-center space-x-2">
                     <input
                       id={`year-${year}`}
@@ -378,6 +281,12 @@ function CodeBlast() {
               </label>
             </div>
 
+            {errors.laptopAvailable && (
+              <p className="text-red-500 text-xs mt-1">
+                {errors.laptopAvailable.message}
+              </p>
+            )}
+
             <style jsx>{`
               .checkbox-box {
                 fill: rgba(207, 205, 205, 0.425);
@@ -406,7 +315,7 @@ function CodeBlast() {
           )}
 
           {/* Email and Contact Number */}
-          <div className="flex flex-col md:flex-row md:space-x-4">
+          <div className="flex flex-col md:flex-row md:space-x-4 mt-4">
             {/* Email */}
             <div className="flex-1">
               <label
@@ -430,7 +339,7 @@ function CodeBlast() {
             </div>
 
             {/* Contact Number */}
-            <div className="flex-1">
+            <div className="flex-1 mt-4 md:mt-0">
               <label
                 htmlFor="contactNum"
                 className="block text-gray-700 text-md font-bold mb-2"

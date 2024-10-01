@@ -7,6 +7,8 @@ import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
 import contactLogo from "../../images/contactLogo.svg";
 import moneyLogo from "../../images/moneyLogo.svg";
+import gobackBtn from "../../images/goBackBtn.svg";
+import rulebookLogo from "../../images/rulebook.svg";
 
 function Webnatic() {
   const {
@@ -18,10 +20,10 @@ function Webnatic() {
   const navigate = useNavigate();
 
   const getYearOfStudy = (year) => {
-    if(year === "1st") return 1;
-    if(year === "2nd") return 2;
-    if(year === "3rd") return 3;
-  }
+    if (year === "1st") return 1;
+    if (year === "2nd") return 2;
+    if (year === "3rd") return 3;
+  };
   const onSubmit = async (data) => {
     try {
       // Create a FormData object
@@ -46,7 +48,7 @@ function Webnatic() {
       );
 
       const responseData = await response.json();
-      console.log(responseData)
+      console.log(responseData);
       console.log("Registration successful:", responseData);
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -63,21 +65,7 @@ function Webnatic() {
         onClick={() => navigate("/")}
       >
         <div className="bg-blue-500 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 1024"
-            height="25px"
-            width="25px"
-          >
-            <path
-              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-              fill="#000000"
-            ></path>
-            <path
-              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-              fill="#000000"
-            ></path>
-          </svg>
+          <img src={gobackBtn} alt="goBack" />
         </div>
         <p className="translate-x-2 tajawal-font">Go Back</p>
       </button>
@@ -91,7 +79,7 @@ function Webnatic() {
       </p>
 
       {/* Event Info */}
-      <div className="event-page-intro grid grid-cols-2 mb-2">
+      <div className="event-page-intro grid grid-rows-2 mb-2 sm:grid-cols-2 sm:grid-rows-1">
         <div className="event-page-intro-left flex justify-center items-center">
           <img
             src={webnaticImage}
@@ -107,15 +95,9 @@ function Webnatic() {
             day.
           </p>
         </div>
-
-        <div className="col-span-2 flex justify-center">
-          <h2 className="text-md font-semibold text-black mt-4 playwrite-de-grund-font">
-            Ready to design like a pro? Join the HTML, CSS & Tailwind workshop!
-          </h2>
-        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 p-4 acme-font">
+      <div className="grid grid-cols-1 gap-4 p-4 acme-font sm:grid-cols-2 sm:grid-rows-1">
         {/* Card for Date of Event */}
         <div className="relative rounded-lg bg-slate-900 p-4">
           <div className="flex items-center mb-2">
@@ -151,14 +133,15 @@ function Webnatic() {
               Contact for any Query
             </h3>
           </div>
-          <p className="text-gray-300">Aditya Baldawa</p>
-          <p className="text-gray-300">Yash Kinikar</p>
+          <p className="text-gray-300">Aditya Baldawa : +918983985787</p>
+          <p className="text-gray-300">Yash Kinikar : +918446160647</p>
         </div>
       </div>
 
-      {/* RULEBOOK Section */}
-      <div className="mb-6 flex justify-center items-center gap-4">
-        <h2 className="text-l font-semibold text-black playwrite-de-grund-font">
+      <div className="mb-6 mt-4 flex flex-col items-center gap-4 md:flex-row">
+        {" "}
+        {/* Change to flex-col for mobile and flex-row for md */}
+        <h2 className="text-l font-semibold text-black playwrite-de-grund-font text-center">
           Discover all the essential information for the event right here
         </h2>
         <button
@@ -166,41 +149,7 @@ function Webnatic() {
           type="button"
         >
           <span className="w-full h-full flex items-center gap-2 px-8 py-3 text-white rounded-[14px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              color="#ffffff"
-              fill="none"
-            >
-              <path
-                d="M22 14V10C22 6.22876 22 4.34315 20.8284 3.17157C19.6569 2 17.7712 2 14 2H12C8.22876 2 6.34315 2 5.17157 3.17157C4 4.34315 4 6.22876 4 10V14C4 17.7712 4 19.6569 5.17157 20.8284C6.34315 22 8.22876 22 12 22H14C17.7712 22 19.6569 22 20.8284 20.8284C22 19.6569 22 17.7712 22 14Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M5 6L2 6M5 12H2M5 18H2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M17.5 7L13.5 7M15.5 11H13.5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 22L9 2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img src={rulebookLogo} alt="rulebookLogo" />
             RULEBOOK
           </span>
         </button>
@@ -262,7 +211,9 @@ function Webnatic() {
             </div>
 
             {/* ID Card Photo */}
-            <div className="flex-1">
+            <div className="flex-1 mt-4 md:mt-0">
+              {" "}
+              {/* Add mt-4 for mobile spacing */}
               <label
                 htmlFor="idCardPhoto"
                 className="block text-gray-700 text-md font-bold mb-2"
@@ -295,7 +246,9 @@ function Webnatic() {
               >
                 Year of Study:
               </label>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mb-4">
+                {" "}
+                {/* Add margin-bottom for spacing */}
                 {["1st", "2nd", "3rd"].map((year) => (
                   <label key={year} className="flex items-center space-x-2">
                     <input
@@ -360,6 +313,12 @@ function Webnatic() {
               </label>
             </div>
 
+            {errors.laptopAvailable && (
+              <p className="text-red-500 text-xs mt-1">
+                {errors.laptopAvailable.message}
+              </p>
+            )}
+
             <style jsx>{`
               .checkbox-box {
                 fill: rgba(207, 205, 205, 0.425);
@@ -388,7 +347,7 @@ function Webnatic() {
           )}
 
           {/* Email and Contact Number */}
-          <div className="flex flex-col md:flex-row md:space-x-4">
+          <div className="flex flex-col md:flex-row md:space-x-4 mt-4">
             {/* Email */}
             <div className="flex-1">
               <label
@@ -412,7 +371,7 @@ function Webnatic() {
             </div>
 
             {/* Contact Number */}
-            <div className="flex-1">
+            <div className="flex-1 mt-4 md:mt-0">
               <label
                 htmlFor="contactNum"
                 className="block text-gray-700 text-md font-bold mb-2"
