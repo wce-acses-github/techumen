@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import qrimage from "../../images/codeBlastqr.jpg";
+import qrimage from "../../images/codeblastqr.jpg";
 import codeBlastImage from "../../images/codeBlastImage.svg";
 import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
