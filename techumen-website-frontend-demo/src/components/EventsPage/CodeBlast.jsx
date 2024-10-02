@@ -204,6 +204,58 @@ function CodeBlast() {
             )}
           </div>
 
+          {/* College Name and ID Card Photo */}
+          <div className="flex flex-col md:flex-row md:space-x-4">
+            {/* College Name */}
+            <div className="flex-1">
+              <label
+                htmlFor="collegeName"
+                className="block text-gray-700 text-md font-bold mb-2"
+              >
+                College Name:
+              </label>
+              <input
+                id="collegeName"
+                className="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+                type="text"
+                placeholder="Enter your college name"
+                {...register("collegeName", {
+                  required: "College Name is required",
+                })}
+              />
+              {errors.collegeName && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.collegeName.message}
+                </p>
+              )}
+            </div>
+
+            {/* ID Card Photo */}
+            <div className="flex-1 mt-4 md:mt-0">
+              {" "}
+              {/* Add mt-4 for mobile spacing */}
+              <label
+                htmlFor="idCardPhoto"
+                className="block text-gray-700 text-md font-bold mb-2"
+              >
+                Upload ID Card Photo:
+              </label>
+              <input
+                id="idCardPhoto"
+                type="file"
+                {...register("idCardPhoto", {
+                  required: "ID Card Photo is required",
+                })}
+                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+              />
+              {errors.idCardPhoto && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.idCardPhoto.message}
+                </p>
+              )}
+            </div>
+          </div>
+
           {/* Year of Study and Laptop Available */}
           <div className="flex flex-col md:flex-row md:space-x-4">
             {/* Year of Study */}
@@ -217,7 +269,7 @@ function CodeBlast() {
               <div className="flex space-x-4 mb-4">
                 {" "}
                 {/* Add margin-bottom for spacing */}
-                {["1st", "2nd", "3rd"].map((year) => (
+                {["1st", "2nd", "3rd", "4th"].map((year) => (
                   <label key={year} className="flex items-center space-x-2">
                     <input
                       id={`year-${year}`}
@@ -239,65 +291,13 @@ function CodeBlast() {
               )}
             </div>
 
-            {/* College Name and ID Card Photo */}
-            <div className="flex flex-col md:flex-row md:space-x-4">
-              {/* College Name */}
-              <div className="flex-1">
-                <label
-                  htmlFor="collegeName"
-                  className="block text-gray-700 text-md font-bold mb-2"
-                >
-                  College Name:
-                </label>
-                <input
-                  id="collegeName"
-                  className="text-sm custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
-                  type="text"
-                  placeholder="Enter your college name"
-                  {...register("collegeName", {
-                    required: "College Name is required",
-                  })}
-                />
-                {errors.collegeName && (
-                  <p className="text-red-500 text-xs mt-1">
-                    {errors.collegeName.message}
-                  </p>
-                )}
-              </div>
-
-              {/* ID Card Photo */}
-              <div className="flex-1 mt-4 md:mt-0">
-                {" "}
-                {/* Add mt-4 for mobile spacing */}
-                <label
-                  htmlFor="idCardPhoto"
-                  className="block text-gray-700 text-md font-bold mb-2"
-                >
-                  Upload ID Card Photo:
-                </label>
-                <input
-                  id="idCardPhoto"
-                  type="file"
-                  {...register("idCardPhoto", {
-                    required: "ID Card Photo is required",
-                  })}
-                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                />
-                {errors.idCardPhoto && (
-                  <p className="text-red-500 text-xs mt-1">
-                    {errors.idCardPhoto.message}
-                  </p>
-                )}
-              </div>
-            </div>
-
             {/* Laptop Available */}
             <div className="flex-1 flex items-center">
               <input
                 id="laptopAvailable"
                 type="checkbox"
                 {...register("laptopAvailable")}
-                className="hidden" 
+                className="hidden"
               />
               <label
                 className="flex items-center cursor-pointer"
@@ -307,7 +307,7 @@ function CodeBlast() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 200 200"
-                  className="checkbox-svg w-6 h-6 mr-2" 
+                  className="checkbox-svg w-6 h-6 mr-2"
                 >
                   <mask fill="white" id="path-1-inside-1">
                     <rect height="200" width="200"></rect>
