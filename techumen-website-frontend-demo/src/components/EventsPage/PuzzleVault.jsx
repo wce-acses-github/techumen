@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import qrimage from "../../images/puzzleVaultqr.jpg";
-import puzzlevaultImage from "../../images/puzzlevaultImage.svg";
+import puzzlevaultImage from "../../images/puzzleVaultImage.svg";
 import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
 import contactLogo from "../../images/contactLogo.svg";
