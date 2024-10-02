@@ -190,7 +190,7 @@ function CompileIt() {
 
       <div className="bg-white p-5 rounded-lg shadow-md">
         <h2 className="text-xl font-semibold text-center mb-4 text-black acme-font">
-          Register for PuzzleVault
+          Register for Compile It
         </h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
