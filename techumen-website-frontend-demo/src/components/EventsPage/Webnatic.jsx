@@ -148,6 +148,12 @@ function Webnatic() {
           <button
             className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc] active:scale-95"
             type="button"
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1GJgckG5ftnc3WA4Q0g34YGR_D_nMzBTw/view?usp=drivesdk",
+                "_blank"
+              )
+            }
           >
             <span className="w-full h-full flex items-center gap-2 px-8 py-3 text-white rounded-[14px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">
               <img src={rulebookLogo} alt="rulebookLogo" />

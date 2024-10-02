@@ -167,6 +167,12 @@ function CodeBlast() {
           <button
             className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc] active:scale-95"
             type="button"
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1GQ9xisWvYabx6KyTnI5udM51WKfqTTNU/view?usp=drivesdk",
+                "_blank"
+              )
+            }
           >
             <span className="w-full h-full flex items-center gap-2 px-8 py-3 text-white rounded-[14px] bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">
               <img src={rulebookLogo} alt="rulebookLogo" />
@@ -486,7 +492,7 @@ function CodeBlast() {
                     {...register("transactionPhoto", {
                       required: "Transaction photo is required",
                     })}
-                    className="block text-black w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
                   />
                   {errors.transactionPhoto && (
                     <p className="text-red-500 text-xs mt-1">

@@ -66,7 +66,15 @@ function HomePage() {
                 design in just a day.
               </p>
               <div className="mt-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20">
+                <button
+                  className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20"
+                  onClick={() =>
+                    window.open(
+                      "https://drive.google.com/file/d/1GJgckG5ftnc3WA4Q0g34YGR_D_nMzBTw/view?usp=drivesdk",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="text-md">RULEBOOK</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                     <div className="relative h-full w-10 bg-white/20"></div>
@@ -78,7 +86,7 @@ function HomePage() {
                   className="flex justify-center gap-2 items-center shadow-xl text-sm md:text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 text-black before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
                   onClick={() => navigate("/webnatic")}
                 >
-                  Explore
+                  Register
                   <svg
                     className="w-6 md:w-8 h-6 md:h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 md:p-2 rotate-45"
                     viewBox="0 0 16 19"
@@ -114,7 +122,15 @@ function HomePage() {
                 compete for the top spot in this high-speed coding showdown.
               </p>
               <div className="mt-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20">
+                <button
+                  className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20"
+                  onClick={() =>
+                    window.open(
+                      "https://drive.google.com/file/d/1GQ9xisWvYabx6KyTnI5udM51WKfqTTNU/view?usp=drivesdk",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="text-md">RULEBOOK</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                     <div className="relative h-full w-10 bg-white/20"></div>
@@ -126,7 +142,7 @@ function HomePage() {
                   className="flex justify-center gap-2 items-center shadow-xl text-sm md:text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 text-black before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
                   onClick={() => navigate("/codeblast")}
                 >
-                  Explore
+                  Register
                   <svg
                     className="w-6 md:w-8 h-6 md:h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 md:p-2 rotate-45"
                     viewBox="0 0 16 19"
@@ -170,7 +186,15 @@ function HomePage() {
                 skills, where speed and synergy lead to success.
               </p>
               <div className="mt-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20">
+                <button
+                  className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20"
+                  onClick={() =>
+                    window.open(
+                      "https://drive.google.com/file/d/1GNts5p2YlfRbuPrmeYcSt-eG5NetnFWw/view?usp=drivesdk",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="text-md">RULEBOOK</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                     <div className="relative h-full w-10 bg-white/20"></div>
@@ -182,7 +206,7 @@ function HomePage() {
                   className="flex justify-center gap-2 items-center shadow-xl text-sm md:text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 text-black before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
                   onClick={() => navigate("/compile-it")}
                 >
-                  Explore
+                  Register
                   <svg
                     className="w-6 md:w-8 h-6 md:h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 md:p-2 rotate-45"
                     viewBox="0 0 16 19"
@@ -218,7 +242,15 @@ function HomePage() {
                 ultimate prize. Do you have what it takes to crack the vault?
               </p>
               <div className="mt-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20">
+                <button
+                  className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-4 md:px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-white/20"
+                  onClick={() =>
+                    window.open(
+                      "https://drive.google.com/file/d/1GKTxv2MDrmdIEN9mR1DVQzJ0e2Be2lDG/view?usp=drivesdk",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="text-md">RULEBOOK</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                     <div className="relative h-full w-10 bg-white/20"></div>
@@ -230,7 +262,7 @@ function HomePage() {
                   className="flex justify-center gap-2 items-center shadow-xl text-sm md:text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 text-black before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
                   onClick={() => navigate("/puzzle-vault")}
                 >
-                  Explore
+                  Register
                   <svg
                     className="w-6 md:w-8 h-6 md:h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-1 md:p-2 rotate-45"
                     viewBox="0 0 16 19"
