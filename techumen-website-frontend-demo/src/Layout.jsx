@@ -21,7 +21,7 @@ function Layout() {
 
     requestAnimationFrame(raf);
   });
-  const location = useLocation(); // Get the current location
+  const location = useLocation(); 
 
   return (
     <div className="layout flex flex-col min-h-screen bg-black text-white relative">
