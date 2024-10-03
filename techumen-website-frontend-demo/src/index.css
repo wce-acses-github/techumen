@@ -66,3 +66,26 @@ button.register:after {
   transition-duration: 400ms;
   transition-property: width, left;
 } */
+
+
+
+*::-webkit-scrollbar {
+  width: 5px;
+  background-color: #132D5E; 
+  border-radius: 10px;
+}
+
+/* Scrollbar Track */
+*::-webkit-scrollbar-track {
+  background-color: #0D2240; 
+  border-radius: 10px; 
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4E9EFF; 
+  border-radius: 10px; 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #3390FF; 
+}

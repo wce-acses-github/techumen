@@ -3,8 +3,24 @@ import Navbar from "./components/HomePage/Navbar";
 import Footer from "./components/HomePage/Footer";
 import backgroundImage from "./images/mid.png";
 import earthImage from "./images/earth.png";
+import { useEffect } from "react";
+import Lenis from "lenis";
 
 function Layout() {
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  });
   const location = useLocation(); // Get the current location
 
   return (
