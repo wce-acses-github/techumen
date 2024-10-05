@@ -481,12 +481,15 @@ function Webnatic() {
               </button>
             </div>
 
-    <p className="text-l font-semibold text-black playwrite-de-grund-font text-center"><span>*</span>If not able to submit through this you can fill the Google form on clicking the link below </p>
+            
+            <p className="block w-full text-sm text-gray-500 p-4 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+  *If not able to submit through this you can fill the Google form on clicking the link below</p>
+
 
           {/* GfORM Button */}
 <div className="flex justify-center mt-6 acme-font">
   <a
-    href="https://docs.google.com/forms/d/e/1FAIpQLSdKEofkyweXhWKo0RNOhTQ4oe9GSYp0xb15Le1gzzntLdAZ6g/viewform"
+    href="https://forms.gle/WSi4j6UhUWz6yXQF6"
     target="_blank"
     rel="noopener noreferrer"
     className="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-md group"

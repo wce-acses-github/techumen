@@ -9,7 +9,7 @@ function Footer() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  
   const onSubmit = async (data) => {
     try {
       const response = await fetch("/api/v1/contactUs/contact", {
@@ -19,18 +19,29 @@ function Footer() {
         },
         body: JSON.stringify(data),
       });
-
+  
+      // Check if the response is OK
       if (response.ok) {
         alert("Message sent successfully!");
       } else {
-        const result = await response.json();
-        alert(`Failed to send the message: ${result.error}`);
+        // Attempt to parse the response as JSON
+        let errorMessage;
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const result = await response.json();
+          errorMessage = result.error || "Failed to send the message.";
+        } else {
+          // Fallback to a plain text response
+          errorMessage = await response.text();
+        }
+        alert(`Failed to send the message: ${errorMessage}`);
       }
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Error sending email. Please try again.");
     }
   };
+  
 
   return (
     <div className="footer-main-div z-10 text-gray-100 rounded-lg pt-8 relative mx-auto">
