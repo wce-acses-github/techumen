@@ -152,8 +152,22 @@ function Footer() {
         className="space-y-3 tajawal-font"
       >
         <div>
-          <label
+        <label
             htmlFor="name"
+            className="block text-white-700 text-md font-bold mb-2"
+          >
+          Name:
+        </label>
+        <input
+            id="name"
+            className="text-black custom-input w-full px-4 py-2 border border-gray-600 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
+            type="text"
+            disabled={false}
+            placeholder="Enter your Name"
+            {...register("name", { required: "Name is required" })}
+          />
+          <label
+            htmlFor="email"
             className="block text-white-700 text-md font-bold mb-2"
           >
             Email:
