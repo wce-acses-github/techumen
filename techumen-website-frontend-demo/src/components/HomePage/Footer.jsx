@@ -18,7 +18,6 @@ function Footer() {
         body: JSON.stringify(data),
       });
   
-      // Check if the response is OK
       if (response.ok) {
         alert("Message sent successfully!");
       } else {
@@ -39,10 +38,10 @@ function Footer() {
   };
 
   return (
-    <div className="footer-main-div z-10 text-gray-100 rounded-lg pt-8 relative mx-auto">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 my-20">
+    <div className="footer-main-div z-10 text-gray-100 rounded-lg pt-8 relative mx-auto ">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-6 my-20 ">
         {/* Footer Info */}
-        <div className="footer-info">
+        <div className="footer-info md:w-1/2">
           <img src={logo} alt="" height={40} width={160} />
           <h3 className="tajawal-font text-lg mb-3">
             &lt;&gt;Logically Shifting the World&lt;/&gt;
@@ -50,8 +49,11 @@ function Footer() {
           <p className="text-gray-200 text-md mb-4 nunito-font">
             Walchand College of Engineering, Sangli
           </p>
-          
-          {/* Contact Form */}
+        </div>
+
+        {/* Contact Form */}
+        <div className="contact-form md:w-1/2">
+          <label className="text-white font-bold text-4xl">Contact Us</label>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-6">
             <input
               type="text"
@@ -72,7 +74,7 @@ function Footer() {
             <textarea
               placeholder="Your Message"
               {...register("message", { required: "Message is required" })}
-              className={`border ${errors.message ? 'border-red-500' : 'border-gray-300'} p-2 mb-4 w-full`}
+              className={`border ${errors.message ? 'border-red-500' : 'border-gray-300'} text-black p-2 mb-4 w-full`}
             />
             {errors.message && <p className="text-red-500">{errors.message.message}</p>}
 
@@ -80,14 +82,14 @@ function Footer() {
               type="submit"
               className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition"
             >
-              Send Message
+              Submit
             </button>
           </form>
         </div>
-        
-        {/* Other Footer Sections */}
-        {/* ... Your existing footer sections ... */}
       </div>
+      <p className="text-center text-white text-lg left-[43%] absolute bottom-2 z-50 mt-6 fredoka-font">
+        © ACSES 2024. All Rights Reserved
+      </p>
     </div>
   );
 }

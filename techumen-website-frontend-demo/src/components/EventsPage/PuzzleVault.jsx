@@ -628,11 +628,12 @@ function PuzzleVault() {
             </div>
 
            
-       {/* GfORM Button */}
-<div className="flex justify-between items-center mt-6 acme-font">
-  <p className="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+<p className="text-sm text-gray-500 mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
     *If not able to submit through this you can fill the Google form by clicking the link below
-  </p>
+  </p>   
+{/* GfORM Button */}
+<div className="flex justify-center mt-6 acme-font">
+  
   
   <a
     href="https://forms.gle/3NvLzrTbwH9fFpnd6"
@@ -652,6 +653,7 @@ function PuzzleVault() {
     </span>
   </a>
 </div>
+
 
           </form>
         </div>
