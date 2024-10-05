@@ -59,7 +59,7 @@ function Footer() {
               type="text"
               placeholder="Your Name"
               {...register("name", { required: "Name is required" })}
-              className={`border ${errors.name ? 'border-red-500' : 'border-gray-300'} p-2 mb-4 w-full`}
+              className={`border ${errors.name ? 'border-red-500' : 'border-gray-300'} text-black p-2 mb-4 w-full`}
             />
             {errors.name && <p className="text-red-500">{errors.name.message}</p>}
 
@@ -67,7 +67,7 @@ function Footer() {
               type="email"
               placeholder="Your Email"
               {...register("email", { required: "Email is required" })}
-              className={`border ${errors.email ? 'border-red-500' : 'border-gray-300'} p-2 mb-4 w-full`}
+              className={`border ${errors.email ? 'border-red-500' : 'border-gray-300'} text-black p-2 mb-4 w-full`}
             />
             {errors.email && <p className="text-red-500">{errors.email.message}</p>}
 
