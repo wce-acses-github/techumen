@@ -449,7 +449,7 @@ function CodeBlast() {
             <div className="flex flex-col md:flex-row md:space-x-4">
               {/* QR Image */}
               <div className="md:w-1/2 mb-4 md:mb-0 flex justify-center items-center">
-                <img src={qrimage} alt="QR Code" className="max-w-full h-80" />
+                <img src="https://res.cloudinary.com/domzgxu5n/image/upload/v1728204580/gtwxh4iisfkpambftz7v.jpg" alt="QR Code" className="max-w-full h-80" />
               </div>
 
               {/* Transaction Details */}

@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import qrImage from "../../images/compileItqr.jpg";
 import compileItImage from "../../images/compileItImage.svg";
 import calenderLogo from "../../images/calenderLogo.svg";
 import clockLogo from "../../images/clockLogo.svg";
@@ -451,7 +450,7 @@ function CompileIt() {
             <div className="flex flex-col md:flex-row md:space-x-4">
               {/* QR Image */}
               <div className="md:w-1/2 mb-4 md:mb-0 flex justify-center items-center">
-                <img src={qrImage} alt="QR Code" className="max-w-full h-80" />
+                <img src="https://res.cloudinary.com/domzgxu5n/image/upload/v1728204465/jl4hibf65oj8rnyvjh5f.jpg" alt="QR Code" className="max-w-full h-80" />
               </div>
 
               {/* Transaction Details */}
