@@ -51,6 +51,91 @@ function Footer() {
           </p>
         </div>
 
+        <section className="flex justify-center items-center space-x-4 mr-20">
+        {/* LinkedIn Button */}
+       <div className="flex flex-col items-center">
+       <a
+      href="https://www.linkedin.com/company/wceacses/"  // Replace with the actual LinkedIn URL
+      target="_blank"
+      rel="noopener noreferrer"
+      className="cursor-pointer"
+    >
+    <button
+      className="p-2 rounded-md drop-shadow-xl bg-[#0077b5] text-white font-semibold"
+    >
+      <img
+        src="https://res.cloudinary.com/dc6kbccnm/image/upload/v1728286645/sf6vo3bxmrtk9oz0zdld.png"
+        alt="LinkedIn Logo"
+        className="w-6 h-6"
+      />
+    </button>
+    </a>
+    <span className="text-sm mt-2">LinkedIn</span>
+  </div>
+
+  {/* Discord Button */}
+  <div className="flex flex-col items-center">
+  <a
+      href="https://discord.gg/Y6ebQAHsNk"  // Replace with the actual Discord URL
+      target="_blank"
+      rel="noopener noreferrer"
+      className="cursor-pointer"
+    >
+    <button
+      className="p-2 rounded-md drop-shadow-xl bg-[#7289da] text-white font-semibold"
+    >
+      <img
+        src="https://res.cloudinary.com/dc6kbccnm/image/upload/v1728286645/n7tso94slouvypfjh2ux.png"
+        alt="Discord Logo"
+        className="w-6 h-6"
+      />
+    </button>
+    </a>
+    <span className="text-sm mt-2">Discord</span>
+  </div>
+
+  {/* Instagram Button */}
+  <div className="flex flex-col items-center">
+  <a
+      href="https://instagram.com/wceacses"  // Replace with the actual Instagram URL
+      target="_blank"
+      rel="noopener noreferrer"
+      className="cursor-pointer"
+    >
+    <button
+      className="p-2 rounded-md drop-shadow-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold"
+    >
+      <img
+        src="https://res.cloudinary.com/dc6kbccnm/image/upload/v1728286645/sxeaclzqfanpsizdyccc.png"
+        alt="Instagram Logo"
+        className="w-6 h-6"
+      />
+    </button>
+    </a>
+    <span className="text-sm mt-2">Instagram</span>
+  </div>
+  <div className="flex flex-col items-center">
+  <a
+      href="https://chat.whatsapp.com/LD68rJ91c6l9OcMM6VNgw2"  // Replace with the actual Discord URL
+      target="_blank"
+      rel="noopener noreferrer"
+      className="cursor-pointer"
+      >
+    <button
+      className="p-2 rounded-md drop-shadow-xl bg-[#25D366] text-white font-semibold"
+      >
+      <img
+        src="https://res.cloudinary.com/dc6kbccnm/image/upload/v1728316823/eo2rnthwrvondgsmgej9.png"
+        alt="Discord Logo"
+        className="w-6 h-6"
+        />
+    </button>
+    </a>
+    <span className="text-sm mt-2">Whatsapp</span>
+  </div>
+  </section>
+
+
         {/* Contact Form */}
         <div className="contact-form md:w-1/2">
           <label className="text-white font-bold text-4xl">Contact Us</label>
