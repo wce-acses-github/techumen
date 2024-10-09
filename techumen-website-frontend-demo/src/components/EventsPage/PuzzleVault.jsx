@@ -195,6 +195,7 @@ function PuzzleVault() {
         <div className="bg-white p-5 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold text-center mb-4 text-black acme-font">
             Register for PuzzleVault
+            <br />
             <strong>
               Due to many requests we have remove the criteria for team of 4.
               Now team can consist of members ranging from 2 to 4.
