@@ -542,7 +542,11 @@ function PuzzleVault() {
             <div className="flex flex-col md:flex-row md:space-x-4">
               {/* QR Image */}
               <div className="md:w-1/2 mb-4 md:mb-0 flex justify-center items-center">
-                <img src={qrimage} alt="QR Code" className="max-w-full h-80" />
+                <img
+                  src="https://res.cloudinary.com/domzgxu5n/image/upload/v1728204500/yz6rfyuvkzxpdvj9n1fo.jpg"
+                  alt="QR Code"
+                  className="max-w-full h-80"
+                />
               </div>
 
               {/* Transaction Details */}
@@ -613,6 +617,31 @@ function PuzzleVault() {
                   Submit
                 </span>
               </button>
+            </div>
+
+            <p className="text-sm text-gray-500 mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              *If not able to submit through this you can fill the Google form
+              by clicking the link below
+            </p>
+            {/* GfORM Button */}
+            <div className="flex justify-center mt-6 acme-font">
+              <a
+                href="https://forms.gle/3NvLzrTbwH9fFpnd6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-md group"
+              >
+                <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                  <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                </span>
+                <span className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-ml-4 group-hover:-mb-4">
+                  <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                </span>
+                <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"></span>
+                <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
+                  GForm
+                </span>
+              </a>
             </div>
           </form>
         </div>
