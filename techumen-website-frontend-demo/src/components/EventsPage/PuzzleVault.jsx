@@ -197,7 +197,7 @@ function PuzzleVault() {
             Register for PuzzleVault
             <br />
             <strong>
-              Due to many requests we have remove the criteria for team of 4.
+              Due to many requests we have removed the criteria for team of 4.
               Now team can consist of members ranging from 2 to 4.
             </strong>
           </h2>
