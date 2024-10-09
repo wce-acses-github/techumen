@@ -13,7 +13,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="home-page-main-div z-50 bg-transparent px-4 py-8">
+    <div className="home-page-main-div z-50 bg-transparent px-4 py-8" id="home">
       {/* Header Section */}
       <p className="text-lg md:text-2xl uppercase font-semibold mb-2 text-center nunito-font">
         Association of Computer Science and Engineering Students

@@ -131,7 +131,7 @@ function Footer() {
           <ul className="list-none">
             <li className="mb-2">
               <a
-                href="#"
+                href="#home"
                 className="text-white-300 hover:translate-x-1 hover:text-blue-400 transition-transform duration-200"
               >
                 Home

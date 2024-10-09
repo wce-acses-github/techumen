@@ -195,6 +195,10 @@ function PuzzleVault() {
         <div className="bg-white p-5 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold text-center mb-4 text-black acme-font">
             Register for PuzzleVault
+            <strong>
+              Due to many requests we have remove the criteria for team of 4.
+              Now team can consist of members ranging from 2 to 4.
+            </strong>
           </h2>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -258,9 +262,7 @@ function PuzzleVault() {
                 <input
                   id="idCardPhoto"
                   type="file"
-                  {...register("leaderIdCardPhoto", {
-                    required: "ID Card Photo Leader is required",
-                  })}
+                  {...register("leaderIdCardPhoto")}
                   className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
                 />
                 {errors.idCardPhoto && (
@@ -397,9 +399,7 @@ function PuzzleVault() {
                     type="text"
                     className="text-sm text-black custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
                     placeholder="Enter Contact Number of Member 1"
-                    {...register("member1_ContactNum", {
-                      required: "Member 1 Contact Number is required",
-                    })}
+                    {...register("member1_ContactNum")}
                   />
                   {errors.member1_ContactNum && (
                     <p>{errors.member1_ContactNum.message}</p>
@@ -419,9 +419,7 @@ function PuzzleVault() {
                   type="text"
                   className="text-sm text-black custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
                   placeholder="Enter Name"
-                  {...register("member2_Name", {
-                    required: "Member 2 Name is required",
-                  })}
+                  {...register("member2_Name")}
                 />
                 {errors.member2_Name && <p>{errors.member2_Name.message}</p>}
               </div>
@@ -441,9 +439,7 @@ function PuzzleVault() {
                     type="text"
                     className="text-sm text-black custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
                     placeholder="Enter College Name of Member 2"
-                    {...register("member2_CollegeName", {
-                      required: "Member 2 College Name is required",
-                    })}
+                    {...register("member2_CollegeName")}
                   />
                   {errors.member2_CollegeName && (
                     <p className="text-red-500 text-xs mt-1">
@@ -466,9 +462,7 @@ function PuzzleVault() {
                     type="text"
                     className="text-sm text-black custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
                     placeholder="Enter Contact Number of Member 2"
-                    {...register("member2_ContactNum", {
-                      required: "Member 2 Contact Number is required",
-                    })}
+                    {...register("member2_ContactNum")}
                   />
                   {errors.member2_ContactNum && (
                     <p className="text-red-500 text-xs mt-1">
@@ -490,9 +484,7 @@ function PuzzleVault() {
                   type="text"
                   className="text-sm text-black custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
                   placeholder="Enter Name"
-                  {...register("member3_Name", {
-                    required: "Member 3 Name is required",
-                  })}
+                  {...register("member3_Name")}
                 />
                 {errors.member3_Name && <p>{errors.member3_Name.message}</p>}
               </div>
@@ -512,9 +504,7 @@ function PuzzleVault() {
                     type="text"
                     className="text-sm text-black custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
                     placeholder="Enter College Name of Member 3"
-                    {...register("member3_CollegeName", {
-                      required: "Member 3 College Name is required",
-                    })}
+                    {...register("member3_CollegeName")}
                   />
                   {errors.member3_CollegeName && (
                     <p className="text-red-500 text-xs mt-1">
@@ -537,9 +527,7 @@ function PuzzleVault() {
                     type="text"
                     className="text-sm text-black custom-input w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-blue-300 hover:shadow-lg hover:border-blue-300 bg-gray-100"
                     placeholder="Enter Contact Number of Member 3"
-                    {...register("member3_ContactNum", {
-                      required: "Member 3 Contact Number is required",
-                    })}
+                    {...register("member3_ContactNum")}
                   />
                   {errors.member3_ContactNum && (
                     <p className="text-red-500 text-xs mt-1">
