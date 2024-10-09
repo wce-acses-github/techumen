@@ -51,46 +51,6 @@ function Footer() {
           </p>
         </div>
 
-<<<<<<< HEAD
-        {/* Quick Link */}
-        <div className="quick-links mx-4 nunito-font">
-          <h2 className="text-white text-2xl mb-4">Quick Links</h2>
-          <ul className="list-none">
-            <li className="mb-2">
-              <a
-                href="#home"
-                className="text-white-300 hover:translate-x-1 hover:text-blue-400 transition-transform duration-200"
-              >
-                Home
-              </a>
-            </li>
-            <li className="mb-2">
-              <a
-                href="#"
-                className="text-white-300 hover:translate-x-1 hover:text-blue-400 transition-transform duration-200"
-              >
-                About Us
-              </a>
-            </li>
-            <li className="mb-2">
-              <a
-                href="#event-grid"
-                className="text-white-300 hover:translate-x-1 hover:text-blue-400 transition-transform duration-200"
-              >
-                Events
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-white-300 hover:translate-x-1 hover:text-blue-400 transition-transform duration-200"
-              >
-                Register
-              </a>
-            </li>
-          </ul>
-        </div>
-=======
         <section className="flex justify-center items-center space-x-4 mr-20">
         {/* LinkedIn Button */}
        <div className="flex flex-col items-center">
@@ -175,7 +135,6 @@ function Footer() {
   </div>
   </section>
 
->>>>>>> 7e21df9a96781aff444759a0f4f03e271db03a7a
 
         {/* Contact Form */}
         <div className="contact-form md:w-1/2">
