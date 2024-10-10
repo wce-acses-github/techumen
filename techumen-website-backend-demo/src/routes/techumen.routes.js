@@ -1,7 +1,7 @@
 import express from "express";
 import techumenController from "../controllers/techumen.controller.js";
 import just from "../middlewares/just.js";
-import {upload} from "../middlewares/multer.middleware.js";
+import { upload } from "../middlewares/multer.middleware.js";
 const {
     addNewWebnaticEntry,
     addNewCodeBlastEntry,
@@ -12,10 +12,10 @@ const {
 const router = express.Router();
 
 const uploadFields = upload.fields([
-    { name: "transactionPhoto", maxCount: 1 }, 
-    { name: "idCardPhoto", maxCount: 1 }, 
+    { name: "transactionPhoto", maxCount: 1 },
+    { name: "idCardPhoto", maxCount: 1 },
 ]);
-router.post("/webnatic",just, uploadFields, (req, res) => {
+router.post("/webnatic", just, uploadFields, (req, res) => {
     console.log("POST request received for /techumen/webnatic");
     addNewWebnaticEntry(req, res);
 });

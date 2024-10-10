@@ -283,9 +283,7 @@ function Webnatic() {
                 <input
                   id="laptopAvailable"
                   type="checkbox"
-                  {...register("laptopAvailable", {
-                    required: "Please check if you have a laptop available",
-                  })}
+                  {...register("laptopAvailable")}
                   className="hidden" // Hide the default checkbox
                 />
                 <label
@@ -296,7 +294,7 @@ function Webnatic() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 200 200"
-                    className="checkbox-svg w-6 h-6 mr-2" // Adjust size using Tailwind classes
+                    className="checkbox-svg w-6 h-6 mr-2"
                   >
                     <mask fill="white" id="path-1-inside-1">
                       <rect height="200" width="200"></rect>
@@ -403,20 +401,31 @@ function Webnatic() {
             </div>
 
             {/* Transaction ID and Transaction Photo with QR */}
-            <div className="flex flex-col md:flex-row md:space-x-4">
-              {/* QR Image */}
-              <div className="md:w-1/2 mb-4 md:mb-0 flex justify-center items-center">
-                <img
-                  src="https://res.cloudinary.com/domzgxu5n/image/upload/v1728204622/dnd80tey95bzqvcnylti.jpg"
-                  alt="QR Code"
-                  className="max-w-full h-80"
-                />
+            <div className="flex flex-col space-y-4">
+              {/* Images Container */}
+              <div className="flex flex-col md:flex-row justify-between md:space-x-4 space-y-4 md:space-y-0">
+                {/* QR Image 1 */}
+                <div className="md:w-1/2 w-full flex justify-center items-center">
+                  <img
+                    src="https://res.cloudinary.com/domzgxu5n/image/upload/v1728204622/dnd80tey95bzqvcnylti.jpg"
+                    alt="QR Code"
+                    className="max-w-full h-80 rounded-lg"
+                  />
+                </div>
+                {/* QR Image 2 */}
+                <div className="md:w-1/2 w-full flex justify-center items-center">
+                  <img
+                    src="https://res.cloudinary.com/daismmmjt/image/upload/v1728566526/mxfmfcvme2zgpw9xafem.jpg"
+                    alt="QR Code"
+                    className="max-w-full h-80 rounded-lg"
+                  />
+                </div>
               </div>
 
-              {/* Transaction Details */}
-              <div className="md:w-1/2 flex flex-col justify-center align-middle space-y-4 p-5">
+              {/* Transaction Details (Fields Container) */}
+              <div className="flex flex-col md:flex-row justify-between md:space-x-4 space-y-4 md:space-y-0">
                 {/* Transaction ID */}
-                <div>
+                <div className="md:w-1/2 w-full">
                   <label
                     htmlFor="transactionId"
                     className="block text-gray-700 text-md font-bold mb-2"
@@ -440,7 +449,7 @@ function Webnatic() {
                 </div>
 
                 {/* Transaction Photo Input */}
-                <div>
+                <div className="md:w-1/2 w-full">
                   <label
                     htmlFor="transactionPhoto"
                     className="block text-gray-700 text-md font-bold mb-2"

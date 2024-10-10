@@ -540,20 +540,32 @@ function PuzzleVault() {
             </div>
 
             {/* Transaction ID and Transaction Photo with QR */}
-            <div className="flex flex-col md:flex-row md:space-x-4">
-              {/* QR Image */}
-              <div className="md:w-1/2 mb-4 md:mb-0 flex justify-center items-center">
-                <img
-                  src="https://res.cloudinary.com/domzgxu5n/image/upload/v1728204500/yz6rfyuvkzxpdvj9n1fo.jpg"
-                  alt="QR Code"
-                  className="max-w-full h-80"
-                />
+            <div className="flex flex-col space-y-4">
+              {/* Images Container */}
+              <div className="flex flex-col md:flex-row justify-between md:space-x-4 space-y-4 md:space-y-0">
+                {/* QR Image 1 */}
+                <div className="md:w-1/2 w-full flex justify-center items-center">
+                  <img
+                    src="https://res.cloudinary.com/domzgxu5n/image/upload/v1728204500/yz6rfyuvkzxpdvj9n1fo.jpg"
+                    alt="QR Code"
+                    className="max-w-full h-80 rounded-lg"
+                  />
+                </div>
+
+                {/* QR Image 2 */}
+                <div className="md:w-1/2 w-full flex justify-center items-center">
+                  <img
+                    src="https://res.cloudinary.com/daismmmjt/image/upload/v1728568132/yyge6ps6xpp4bzkhopx6.jpg"
+                    alt="QR Code"
+                    className="max-w-full h-80 rounded-lg"
+                  />
+                </div>
               </div>
 
-              {/* Transaction Details */}
-              <div className="md:w-1/2 flex flex-col justify-center align-middle space-y-4 p-5">
+              {/* Transaction Details (Fields Container) */}
+              <div className="flex flex-col md:flex-row justify-between md:space-x-4 space-y-4 md:space-y-0">
                 {/* Transaction ID */}
-                <div>
+                <div className="md:w-1/2 w-full">
                   <label
                     htmlFor="transactionId"
                     className="block text-gray-700 text-md font-bold mb-2"
@@ -577,7 +589,7 @@ function PuzzleVault() {
                 </div>
 
                 {/* Transaction Photo Input */}
-                <div>
+                <div className="md:w-1/2 w-full">
                   <label
                     htmlFor="transactionPhoto"
                     className="block text-gray-700 text-md font-bold mb-2"

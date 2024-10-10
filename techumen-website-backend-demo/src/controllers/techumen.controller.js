@@ -22,21 +22,17 @@ const addNewWebnaticEntry = async (req, res) => {
         let collegeIdPhoto = null;
 
         // Upload transactionPhoto and collegeIdPhoto to Cloudinary
-        console.log(req.files)
-        if (
-            req.files &&
-            req.files.transactionPhoto &&
-            req.files.idCardPhoto
-        ) {
+        console.log(req.files);
+        if (req.files && req.files.transactionPhoto && req.files.idCardPhoto) {
             try {
                 transactionPhoto = await uploadImageToCloudinary(
                     req.files.transactionPhoto[0].buffer
                 );
-                console.log(transactionPhoto)
+                console.log(transactionPhoto);
                 collegeIdPhoto = await uploadImageToCloudinary(
                     req.files.idCardPhoto[0].buffer
                 );
-                console.log(collegeIdPhoto)
+                console.log(collegeIdPhoto);
             } catch (err) {
                 console.error("Image upload to Cloudinary failed:", err);
             }
@@ -58,8 +54,8 @@ const addNewWebnaticEntry = async (req, res) => {
 
         res.status(200).send({
             success: true,
-            message:"New entry saved successfully"
-        })
+            message: "New entry saved successfully",
+        });
     } catch (error) {
         console.error("Error adding new entry:", error);
         res.status(500).json(
@@ -84,11 +80,7 @@ const addNewCodeBlastEntry = async (req, res) => {
         let collegeIdPhoto = null;
 
         // Upload transactionPhoto and collegeIdPhoto to Cloudinary
-        if (
-            req.files &&
-            req.files.transactionPhoto &&
-            req.files.idCardPhoto
-        ) {
+        if (req.files && req.files.transactionPhoto && req.files.idCardPhoto) {
             try {
                 transactionPhoto = await uploadImageToCloudinary(
                     req.files.transactionPhoto[0].buffer
@@ -127,7 +119,6 @@ const addNewCodeBlastEntry = async (req, res) => {
     }
 };
 
-
 const addNewCompileItEntry = async (req, res) => {
     try {
         const {
@@ -150,11 +141,7 @@ const addNewCompileItEntry = async (req, res) => {
         let collegeIdPhoto = null;
 
         // Upload transactionPhoto and collegeIdPhoto to Cloudinary
-        if (
-            req.files &&
-            req.files.transactionPhoto &&
-            req.files.idCardPhoto
-        ) {
+        if (req.files && req.files.transactionPhoto && req.files.idCardPhoto) {
             try {
                 transactionPhoto = await uploadImageToCloudinary(
                     req.files.transactionPhoto[0].buffer
@@ -221,11 +208,7 @@ const addNewPuzzleVaultEntry = async (req, res) => {
         let collegeIdPhoto = null;
 
         // Upload transactionPhoto and collegeIdPhoto to Cloudinary
-        if (
-            req.files &&
-            req.files.transactionPhoto &&
-            req.files.idCardPhoto
-        ) {
+        if (req.files && req.files.transactionPhoto && req.files.idCardPhoto) {
             try {
                 transactionPhoto = await uploadImageToCloudinary(
                     req.files.transactionPhoto[0].buffer
